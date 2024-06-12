@@ -1,0 +1,45 @@
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y != 0:
+        return x / y
+    else:
+        return "Error: Division by zero is undefined."
+
+print("Enter 'A' for Addition.")
+print("Enter 'S' for Subtraction.")
+print("Enter 'M' for Multiplication.")
+print("Enter 'D' for Division.")
+
+while True:
+    choice = input('Enter Choice (A,S,M,D): ')
+    
+    if choice.upper() in ('A','ADD','ADDITION','S','SUB','SUBTRACTION','M','MULTIPLICATION','MULTIPLY','D','DIVIDE','DIVISION'):
+        num1 = float(input('Enter First number: '))
+        num2 = float(input('Enter Second number: '))
+
+        if choice.upper() in ('A','ADD','ADDITION'):
+            print('Answer:', num1, '+', num2, '=', add(num1, num2))
+
+        elif choice.upper() in ('S','SUB','SUBTRACTION'):
+            print('Answer:', num1, '-', num2, '=', subtract(num1, num2))
+
+        elif choice.upper() in ('M','MULTIPLICATION','MULTIPLY'):
+            print('Answer:', num1, '*', num2, '=', multiply(num1, num2))
+
+        elif choice.upper() in ('D','DIVIDE','DIVISION'):
+            print('Answer:', num1, '/', num2, '=', divide(num1, num2))
+
+    else:
+        print('Please input a correct selection.')
+
+    next_calculation = input('Want to do another calculation? (yes/no): ')
+    if next_calculation.upper() in ('NO', 'N', 'NOPE'):
+        break
