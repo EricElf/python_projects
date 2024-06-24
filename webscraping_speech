@@ -1,0 +1,53 @@
+#importing BeautfilSoup + Requests and setting up webpage
+from bs4 import BeautifulSoup
+import requests
+url = 'http://analytictech.com/mb021/mlk.htm'
+page = requests.get(url)
+soup = BeautifulSoup(page.text, 'html')
+
+#identifying the body of the speech
+mlk_speech = soup.find_all('p')
+
+type(mlk_speech)
+bs4.element.ResultSet
+
+#list comprehension and converting text to one long string
+speech_combined = [p.text for p in mlk_speech]
+' '.join(speech_combined)
+string_speech = ' '.join(speech_combined)
+
+#removing random "\n" from the speech
+clean_string_speech = string_speech.replace('\r\n', ' ')
+
+#importing regular expression to help clean speech
+import re
+
+#removing punctuation
+speech_no_punct = re.sub(r'[^\w\s]', '',clean_string_speech)
+print(speech_no_punct)
+
+#converting speech to lowercase so that it doesn't screw up the word count
+speech_lower = speech_no_punct.lower()
+speech_broken_out = re.split(r'\s+',speech_lower)
+
+#importing Pandas
+import pandas as pd
+
+#getting the word count
+df = pd.DataFrame(speech_broken_out).value_counts()
+df
+the        54
+of         49
+to         29
+and        27
+a          20
+           ..
+jews        1
+joyous      1
+judged      1
+land        1
+lookout     1
+Name: count, Length: 323, dtype: int64
+
+#create csv and save to folder
+df.to_csv(r'C:\Users\eelf8\Documents\py prac 3\mlk_speech_counts.csv', header = ['Counts'],index_label = 'Word')
