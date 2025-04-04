@@ -50,4 +50,4 @@ lookout     1
 Name: count, Length: 323, dtype: int64
 
 #create csv and save to folder
-df.to_csv(r'C:\Users\eelf8\Documents\py prac 3\mlk_speech_counts.csv', header = ['Counts'],index_label = 'Word')
+df.to_csv(r'C:_______________\Documents\py prac 3\mlk_speech_counts.csv', header = ['Counts'],index_label = 'Word')
