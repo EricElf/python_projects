@@ -59,12 +59,12 @@ Crypto Name	Price	Date Time
 0	Bitcoin	65,049.80	2024-06-19 14:42:31.573183
 
 #exporting to csv
-df.to_csv(r'C:\Users\eelf8\Documents\py prac 3\crypto_automated_pull.csv')
+df.to_csv(_________\Documents\py prac 3\crypto_automated_pull.csv')
 import os
-if os.path.exists(r'C:\Users\eelf8\Documents\py prac 3\crypto_automated_pull.csv'):
-    df.to_csv(r'C:\Users\eelf8\Documents\py prac 3\crypto_automated_pull.csv', mode ='a', header = False, index = False)
+if os.path.exists(_________\Documents\py prac 3\crypto_automated_pull.csv'):
+    df.to_csv(___________\Documents\py prac 3\crypto_automated_pull.csv', mode ='a', header = False, index = False)
 else:
-    df.to_csv(r'C:\Users\eelf8\Documents\py prac 3\crypto_automated_pull.csv')
+    df.to_csv(__________\Documents\py prac 3\crypto_automated_pull.csv')
 
 
 
@@ -97,10 +97,10 @@ def automated_crypto_pull():
 
     df = pd.DataFrame([dict])
 
-    if os.path.exists(r'C:\Users\eelf8\Documents\py prac 3\crypto_automated_pull.csv'):
-        df.to_csv(r'C:\Users\eelf8\Documents\py prac 3\crypto_automated_pull.csv', mode ='a', header = False, index = False)
+    if os.path.exists(____________\Documents\py prac 3\crypto_automated_pull.csv'):
+        df.to_csv(_____________\Documents\py prac 3\crypto_automated_pull.csv', mode ='a', header = False, index = False)
     else:
-        df.to_csv(r'C:\Users\eelf8\Documents\py prac 3\crypto_automated_pull.csv', index = False)
+        df.to_csv(_____________\Documents\py prac 3\crypto_automated_pull.csv', index = False)
     print(df)
 
 #Automating it to pull every 30 secs
